@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo.view;
+package com.sunjiajia.newdemo.view;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo.adapter;
+package com.sunjiajia.newdemo.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sunjiajia.androidnewwidgetsdemo.R;
+import com.sunjiajia.newdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * Created by Monkey on 2015/6/29.
  */
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHolder> {
+public class MyStaggeredViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHolder> {
 
   public interface OnItemClickListener {
     void onItemClick(View view, int position);
@@ -49,14 +49,19 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
 
   public Context mContext;
   public List<String> mDatas;
+  public List<Integer> mHeights;
   public LayoutInflater mLayoutInflater;
 
-  public MyRecyclerViewAdapter(Context mContext) {
+  public MyStaggeredViewAdapter(Context mContext) {
     this.mContext = mContext;
     mLayoutInflater = LayoutInflater.from(mContext);
     mDatas = new ArrayList<>();
+    mHeights = new ArrayList<>();
     for (int i = 'A'; i <= 'z'; i++) {
       mDatas.add((char) i + "");
+    }
+    for (int i = 0; i < mDatas.size(); i++) {
+      mHeights.add((int) (Math.random() * 300) + 200);
     }
   }
 
@@ -88,6 +93,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
       });
     }
 
+    ViewGroup.LayoutParams mLayoutParams = holder.mTextView.getLayoutParams();
+    mLayoutParams.height = mHeights.get(position);
+    holder.mTextView.setLayoutParams(mLayoutParams);
     holder.mTextView.setText(mDatas.get(position));
   }
 

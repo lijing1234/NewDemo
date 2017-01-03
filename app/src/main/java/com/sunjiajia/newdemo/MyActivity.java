@@ -17,19 +17,16 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.newdemo;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.TabLayout.TabLayoutOnPageChangeListener;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -38,11 +35,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.RotateAnimation;
 
-import com.sunjiajia.androidnewwidgetsdemo.adapter.DianZiAdapter;
-import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
-import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
+import com.sunjiajia.newdemo.adapter.DianZiAdapter;
+import com.sunjiajia.newdemo.adapter.MyViewPagerAdapter;
+import com.sunjiajia.newdemo.utils.SnackbarUtil;
 
 import java.util.ArrayList;
 import java.util.List;

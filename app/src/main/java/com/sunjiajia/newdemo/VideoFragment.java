@@ -17,33 +17,21 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.newdemo;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 
-
-/**
- * Created by lijing on 2017/1/3.
- */
-
-public class HomeFragment extends Fragment {
-
-
-
-    public static HomeFragment newInstance() {
-        return new HomeFragment();
-    }
-    @Override
+public class VideoFragment extends Fragment {
+	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-//        initView(view);
-
-        return view;
+    		Bundle savedInstanceState) {
+		View view =  inflater.inflate(R.layout.video_frag, null);
+    	view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)) ;
+    	return view; 
     }
 }

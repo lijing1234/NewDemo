@@ -17,7 +17,7 @@
  *
  */
 
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.newdemo;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,11 +29,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 
-import com.sunjiajia.androidnewwidgetsdemo.adapter.MyRecyclerViewAdapter;
-import com.sunjiajia.androidnewwidgetsdemo.adapter.MyStaggeredViewAdapter;
-import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
+import com.sunjiajia.newdemo.adapter.MyRecyclerViewAdapter;
+import com.sunjiajia.newdemo.adapter.MyStaggeredViewAdapter;
+import com.sunjiajia.newdemo.utils.SnackbarUtil;
 
 public class AppFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, MyRecyclerViewAdapter.OnItemClickListener,
 		MyStaggeredViewAdapter.OnItemClickListener{

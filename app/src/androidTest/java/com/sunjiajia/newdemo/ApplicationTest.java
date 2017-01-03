@@ -1,4 +1,4 @@
-package com.sunjiajia.androidnewwidgetsdemo;
+package com.sunjiajia.newdemo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
