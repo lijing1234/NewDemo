@@ -28,6 +28,8 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.TabLayout.TabLayoutOnPageChangeListener;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -38,6 +40,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.RotateAnimation;
 
+import com.sunjiajia.androidnewwidgetsdemo.adapter.DianZiAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.adapter.MyViewPagerAdapter;
 import com.sunjiajia.androidnewwidgetsdemo.utils.SnackbarUtil;
 
@@ -65,10 +68,15 @@ public class MyActivity extends AppCompatActivity
   private List<Fragment> mFragments;
   // ViewPager的数据适配器
   private MyViewPagerAdapter mViewPagerAdapter;
+  private Fragment mContent;
+  private FragmentManager fm;
+  private DianZiAdapter adapter;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
     setContentView(R.layout.activity_my);
+    //添加menu的fragment
 
     // 初始化各种控件
     initViews();
@@ -80,6 +88,12 @@ public class MyActivity extends AppCompatActivity
     // 对各种控件进行设置、适配、填充数据
     configViews();
   }
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    // TODO Auto-generated method stub
+    super.onSaveInstanceState(outState);
+    getSupportFragmentManager().putFragment(outState, "mContent", mContent);
+  }
 
   private void initData() {
 
@@ -88,13 +102,31 @@ public class MyActivity extends AppCompatActivity
 
     //初始化填充到ViewPager中的Fragment集合
     mFragments = new ArrayList<>();
-    for (int i = 0; i < mTitles.length; i++) {
-      Bundle mBundle = new Bundle();
-      mBundle.putInt("flag", i);
-      MyFragment mFragment = new MyFragment();
-      mFragment.setArguments(mBundle);
-      mFragments.add(i, mFragment);
-    }
+//    for (int i = 0; i < mTitles.length; i++) {
+//      Bundle mBundle = new Bundle();
+//      mBundle.putInt("flag", i);
+//      MyFragment mFragment = new MyFragment();
+//      mFragment.setArguments(mBundle);
+//
+//      mFragments.add(i, mFragment);
+//    }
+
+
+    fm = getSupportFragmentManager();
+
+    mFragments.add(0,new AppFragment());
+    mFragments.add(1,new GameFragment());
+    mFragments.add(2,new HomeFragment());
+    mFragments.add(3,new VideoFragment());
+    mFragments.add(4,new VideoFragment());
+
+
+
+    adapter = new DianZiAdapter(fm, mFragments);
+    mViewPager.setAdapter(adapter);
+    WindowModel.WIDTH = getWindowManager().getDefaultDisplay().getWidth();
+
+    mViewPager.setCurrentItem(0);
   }
 
   private void configViews() {
