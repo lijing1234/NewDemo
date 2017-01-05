@@ -18,14 +18,15 @@
   ~  */
   -->
 
-<resources>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/splash_bg_newyear">
 
-  <string-array name="tab_titles">
-    <item>垂直List</item>
-    <item>理疗仪</item>
-    <item>垂直Grid</item>
-    <item>水平Grid</item>
-    <item>瀑布Staggered</item>
-  </string-array>
-
-</resources>
+    <ImageView
+        android:id="@+id/splash_iv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/welcome" />
+</RelativeLayout>

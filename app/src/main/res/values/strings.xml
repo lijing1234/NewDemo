@@ -18,7 +18,7 @@
   -->
 
 <resources>
-  <string name="app_name">New Demo </string>
+  <string name="app_name">金天国际</string>
 
   <string name="toolbar_title">New Demo</string>
   <string name="action_settings">settings</string>
@@ -30,4 +30,6 @@
   <string name="item_clicked">item clicked！</string>
   <string name="item_longclicked">item long clicked！</string>
 
+  <string name="str_di">Digital Input</string>
+  <string name="str_do">Digital Output</string>
 </resources>
