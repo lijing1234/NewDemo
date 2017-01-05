@@ -35,4 +35,7 @@
     <item name="android:textColorPrimary">@color/main_white</item>
 
   </style>
+  <style name="TabLayoutTextStyle">
+    <item name="android:textSize">@dimen/text_16_sp</item>
+  </style>
 </resources>

@@ -90,9 +90,12 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/id_tablayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/main_white"
+        app:tabTextColor="@color/main_black_grey"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+
         />
 
   </android.support.design.widget.AppBarLayout>
